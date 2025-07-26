@@ -65,6 +65,59 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+
+
+
+# Job Search API
+
+A RESTful API for managing job postings, built with **.NET 8** and **C# 12**.
+
+## Features
+
+- CRUD operations for job postings
+- Tag management with flexible storage (JSON array or comma-separated string)
+- Entity Framework Core integration
+- Modern .NET and C# features
+
+## Project Structure
+
+- `Models/Job.cs` – Defines the `Job` entity and tag handling logic
+- `Data/AppDbContext.cs` – Entity Framework Core database context
+- `Controllers/JobsController.cs` – API endpoints for job management
+- `Properties/launchSettings.json` – Launch and environment configuration
+
+## Job Model
+
+The `Job` model includes:
+
+- `Id` (int): Primary key
+- `JobId` (string): External or custom job identifier
+- `Slug` (string): URL-friendly identifier
+- `Epoch` (long): Timestamp
+- `Date` (DateTime): Date of posting
+- `Company`, `CompanyLogo`, `Position` (string): Company and position details
+- `Tags` (List<string>): Tags for the job (stored as JSON in the database)
+- `Description`, `Location` (string): Job details
+- `SalaryMin`, `SalaryMax` (int?): Salary range
+- `ApplyUrl`, `Url` (string): Application and job URLs
+- `PostedDate` (DateTime?): Date the job was posted
+
+## Tag Handling
+
+- Tags are stored as a JSON string in the database (`TagsJson`).
+- The application exposes tags as a `List<string>`, supporting both JSON arrays and comma-separated strings for backward compatibility.
+
+## Getting Started
+
+### Prerequisites
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [SQL Server](https://www.microsoft.com/en-us/sql-server) or another supported database
+
+### Setup
+
+1. **Clone the repository:**
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
